@@ -5,4 +5,11 @@ package br.ufmg.coltec.tp.appacademico.Negocio;
  */
 
 public interface IFachadaAluno {
+
+    public void inserirAluno(Aluno aluno);
+
+    public void removerAluno(Aluno aluno);
+
+    public void buscarAluno(Aluno aluno);
+
 }
