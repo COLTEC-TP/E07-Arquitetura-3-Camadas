@@ -1,18 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:padding="5dp">
 
     <TextView
+        android:id="@+id/textViewProfessor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Professor"
+        android:textSize="25dp"/>
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/RelativeLayoutProfessor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_below="@id/textViewProfessor">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nome"
+            android:id="@+id/editTextProfessor" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutProfessor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextProfessor">
+            <RadioButton
+                android:id="@+id/radioCadastroProfessor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cadastro"
+                android:layout_weight=".50" />
+
+            <RadioButton
+                android:id="@+id/radioConsultaProfessor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Consulta"
+                android:layout_weight=".50" />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enviar"
+            android:layout_below="@id/linearLayoutProfessor"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textViewAluno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/RelativeLayoutProfessor"
+        android:text="Aluno"
+        android:textSize="25dp"/>
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayoutAluno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_below="@id/textViewAluno">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nome"
+            android:id="@+id/editTextAluno" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutAluno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextAluno">
+            <RadioButton
+                android:id="@+id/radioCadastroAluno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cadastro"
+                android:layout_weight=".50" />
+
+            <RadioButton
+                android:id="@+id/radioConsultaAluno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Consulta"
+                android:layout_weight=".50" />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enviar"
+            android:layout_below="@id/linearLayoutAluno"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
