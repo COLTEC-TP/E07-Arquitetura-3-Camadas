@@ -42,8 +42,10 @@ public class RepositorioAlunoBDR extends SQLiteOpenHelper implements IRepositori
     }
 
     @Override
-    public void removerAluno(Aluno aluno) {
-
+    public void removerAluno(long matricula) {
+        SQLiteDatabase db = getReadableDatabase();
+        db.delete(DB_NOME, "matricula = " + matricula, null);
+        db.close();
     }
 
     @Override

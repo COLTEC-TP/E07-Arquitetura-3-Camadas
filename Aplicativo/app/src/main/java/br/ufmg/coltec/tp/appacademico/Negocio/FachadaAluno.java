@@ -1,5 +1,7 @@
 package br.ufmg.coltec.tp.appacademico.Negocio;
 
+import android.app.Activity;
+
 /**
  * Created by a2016951820 on 19/09/18.
  */
@@ -7,22 +9,22 @@ package br.ufmg.coltec.tp.appacademico.Negocio;
 public class FachadaAluno implements IFachadaAluno{
     ControladorAluno controlador;
 
-    public FachadaAluno(){
-        this.controlador = new ControladorAluno();
+    public FachadaAluno(Activity activity){
+        this.controlador = new ControladorAluno(activity);
     }
 
     @Override
     public void inserirAluno(Aluno aluno) {
-
+        this.controlador.inserir(aluno);
     }
 
     @Override
-    public void removerAluno(Aluno aluno) {
-
+    public void removerAluno(long matricula) {
+        this.controlador.remover(matricula);
     }
 
     @Override
-    public void buscarAluno(Aluno aluno) {
-
+    public Aluno buscarAluno(long matricula) {
+        return this.controlador.buscar(matricula);
     }
 }

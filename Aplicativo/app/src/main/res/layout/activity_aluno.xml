@@ -15,45 +15,36 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/lbl_tituloAluno"/>
 
-    <EditText
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nome"
+        android:text="Inserir"
         android:layout_marginStart="22dp"
         android:layout_marginEnd="22dp"
+        android:layout_marginTop="22dp"
         android:layout_below="@id/lbl_tituloAluno"
-        android:id="@+id/txt_nomeAluno"
-        />
+        android:id="@+id/btn_intentInserirAluno"/>
 
-    <EditText
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Matricula"
-        android:layout_alignStart="@id/txt_nomeAluno"
-        android:layout_alignEnd="@id/txt_nomeAluno"
-        android:layout_below="@id/txt_nomeAluno"
-        android:id="@+id/txt_matriculaAluno"
+        android:text="Remover"
+        android:layout_marginTop="22dp"
+        android:layout_alignStart="@id/btn_intentInserirAluno"
+        android:layout_alignEnd="@id/btn_intentInserirAluno"
+        android:layout_below="@id/btn_intentInserirAluno"
+        android:id="@+id/btn_intentRemoverAluno"
         />
 
-    <EditText
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Curso"
-        android:layout_alignStart="@id/txt_nomeAluno"
-        android:layout_alignEnd="@id/txt_nomeAluno"
-        android:layout_below="@id/txt_matriculaAluno"
-        android:id="@+id/txt_cursoAluno"
+        android:text="Buscar"
+        android:layout_marginTop="22dp"
+        android:layout_alignStart="@id/btn_intentInserirAluno"
+        android:layout_alignEnd="@id/btn_intentInserirAluno"
+        android:layout_below="@id/btn_intentRemoverAluno"
+        android:id="@+id/btn_intentBuscarAluno"
         />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Endereco"
-        android:layout_alignStart="@id/txt_nomeAluno"
-        android:layout_alignEnd="@id/txt_nomeAluno"
-        android:layout_below="@id/txt_matriculaAluno"
-        android:id="@+id/txt_enderecoAluno"
-        />
-
 
 </RelativeLayout>

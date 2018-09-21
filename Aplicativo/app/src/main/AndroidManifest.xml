@@ -17,7 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".UI.ProfessorActivity" />
-        <activity android:name=".UI.AlunoActivity"></activity>
+        <activity android:name=".UI.AlunoActivity" />
+        <activity android:name=".UI.InserirAlunoActivity" />
+        <activity android:name=".UI.RemoverAlunoActivity" />
+        <activity android:name=".UI.BuscarAlunoActivity"></activity>
     </application>
 
 </manifest>

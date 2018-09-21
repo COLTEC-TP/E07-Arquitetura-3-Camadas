@@ -8,8 +8,8 @@ public interface IFachadaAluno {
 
     public void inserirAluno(Aluno aluno);
 
-    public void removerAluno(Aluno aluno);
+    public void removerAluno(long matricula);
 
-    public void buscarAluno(Aluno aluno);
+    public Aluno buscarAluno(long matricula);
 
 }
