@@ -19,8 +19,8 @@ public class FachadaAluno implements IFachadaAluno{
     }
 
     @Override
-    public void removerAluno(long matricula) {
-        this.controlador.remover(matricula);
+    public boolean removerAluno(long matricula) {
+        return this.controlador.remover(matricula);
     }
 
     @Override

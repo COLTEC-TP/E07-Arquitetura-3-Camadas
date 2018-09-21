@@ -20,8 +20,8 @@ public class ControladorAluno {
         repositorioAluno.inserirAluno(aluno);
     }
 
-    public void remover(long matricula){
-        repositorioAluno.removerAluno(matricula);
+    public boolean remover(long matricula){
+        return repositorioAluno.removerAluno(matricula);
     }
 
     public Aluno buscar(long matricula){

@@ -1,5 +1,6 @@
 package br.ufmg.coltec.tp.appacademico.UI;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,9 @@ public class InserirAlunoActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inserir_aluno);
 
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         final EditText nome = findViewById(R.id.txt_nomeAluno);
         final EditText curso = findViewById(R.id.txt_cursoAluno);
         final EditText matricula = findViewById(R.id.txt_matriculaAluno);
@@ -31,14 +35,22 @@ public class InserirAlunoActivity extends Activity {
         inserir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Aluno aluno = new Aluno(nome.getText().toString(),
-                        curso.getText().toString(),
-                        Long.parseLong(matricula.getText().toString()),
-                        endereco.getText().toString());
+                String strNome = nome.getText().toString();
+                String strCurso = curso.getText().toString();
+                String strMatricula = matricula.getText().toString();
+                String strEndereco = endereco.getText().toString();
+                if (!strNome.equals("") && !strCurso.equals("") && !strMatricula.equals("") && !strEndereco.equals("")) {
+                    Aluno aluno = new Aluno(nome.getText().toString(),
+                            curso.getText().toString(),
+                            Long.parseLong(matricula.getText().toString()),
+                            endereco.getText().toString());
 
-                fachadaAluno.inserirAluno(aluno);
-
-                Toast.makeText(InserirAlunoActivity.this, "Aluno inserido com sucesso", Toast.LENGTH_SHORT).show();
+                    fachadaAluno.inserirAluno(aluno);
+                    Toast.makeText(InserirAlunoActivity.this, "Aluno inserido com sucesso", Toast.LENGTH_SHORT).show();
+                    finish();
+                }else{
+                    Toast.makeText(InserirAlunoActivity.this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

@@ -10,7 +10,7 @@ public interface IRepositorioAluno {
 
     public void inserirAluno(Aluno aluno);
 
-    public void removerAluno(long matricula);
+    public boolean removerAluno(long matricula);
 
     public Aluno buscarAluno(long matricula);
 

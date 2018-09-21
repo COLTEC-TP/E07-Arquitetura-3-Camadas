@@ -1,11 +1,13 @@
 package br.ufmg.coltec.tp.appacademico.UI;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import br.ufmg.coltec.tp.appacademico.Negocio.Aluno;
 import br.ufmg.coltec.tp.appacademico.Negocio.FachadaAluno;
@@ -20,6 +22,9 @@ public class BuscarAlunoActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buscar_aluno);
 
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         final EditText matricula = findViewById(R.id.txt_matriculaBuscarAluno);
 
         final TextView nome = findViewById(R.id.lbl_nomeBuscarAluno);
@@ -30,10 +35,17 @@ public class BuscarAlunoActivity extends Activity {
         buscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Aluno aluno = fachadaAluno.buscarAluno(Long.parseLong(matricula.getText().toString()));
-                nome.setText("Nome: " + aluno.getNome());
-                curso.setText("Curso: " + aluno.getCurso());
-                endereco.setText("Endereço: " + aluno.getEndereco());
+                try {
+                    Aluno aluno = fachadaAluno.buscarAluno(Long.parseLong(matricula.getText().toString()));
+                    nome.setText("Nome: " + aluno.getNome());
+                    curso.setText("Curso: " + aluno.getCurso());
+                    endereco.setText("Endereço: " + aluno.getEndereco());
+                }catch(NullPointerException e){
+                    Toast.makeText(BuscarAlunoActivity.this, "Aluno não encontrado", Toast.LENGTH_SHORT).show();
+                }catch (NumberFormatException e){
+                    Toast.makeText(BuscarAlunoActivity.this, "Preencha o campo de matrícula", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
     }
