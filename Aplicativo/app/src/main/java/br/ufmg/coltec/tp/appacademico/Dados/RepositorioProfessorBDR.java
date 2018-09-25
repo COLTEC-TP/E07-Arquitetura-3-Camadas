@@ -1,8 +1,99 @@
 package br.ufmg.coltec.tp.appacademico.Dados;
 
+import android.app.Activity;
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+import br.ufmg.coltec.tp.appacademico.Negocio.Professor;
+
 /**
  * Created by a2016951820 on 19/09/18.
  */
 
-public class RepositorioProfessorBDR {
+public class RepositorioProfessorBDR extends SQLiteOpenHelper implements IRepositorioProfessor {
+
+    private static String DB_NAME = "Alunos";
+    private static final int DB_VERSION = 1;
+    private static final String SCRIPT_CREATE = "CREATE TABLE professores (nome TEXT, curso TEXT, numero_cadastro LONG)";
+
+    public RepositorioProfessorBDR(Activity context) {
+        super(context, DB_NAME, null, DB_VERSION);
+    }
+
+
+    //SQLite
+    @Override
+    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+        sqLiteDatabase.execSQL(SCRIPT_CREATE);
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
+
+    }
+
+    //IRepositorioProfessor
+    @Override
+    public void insereProfessor(Professor professor) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        try {
+            ContentValues contentValues = new ContentValues();
+
+            contentValues.put("nome", professor.getNome());
+            contentValues.put("curso", professor.getCurso());
+            contentValues.put("numero_cadastro", professor.getNumeroCadastro());
+
+            sqLiteDatabase.insert("Alunos", null, contentValues);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        finally {
+            sqLiteDatabase.close();
+        }
+    }
+
+    @Override
+    public boolean removeProfessor(long numeroCadastro) {
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+
+        int rows_deleted = sqLiteDatabase.delete(DB_NAME, "numero_cadastro" + " = " + numeroCadastro, null);
+
+        sqLiteDatabase.close();
+
+        return rows_deleted > 0;
+    }
+
+    @Override
+    public Professor buscaProfessor(String nome) {
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+
+        try {
+            Cursor cursor = sqLiteDatabase.query("Professor", null, null, null, null, null, null);
+
+            if (cursor.moveToFirst()) {
+                do {
+                    String nomeProfessor = cursor.getString(cursor.getColumnIndex("nome"));
+
+                    if (nomeProfessor == nome) {
+                        String curso = cursor.getString(cursor.getColumnIndex("curso"));
+                        long numeroCadastro = cursor.getLong(cursor.getColumnIndex("numero_cadastro"));
+
+                        return new Professor(nome, curso, numeroCadastro);
+                    }
+                } while (cursor.moveToNext());
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        finally {
+            sqLiteDatabase.close();
+        }
+
+        return null;
+    }
 }
