@@ -12,5 +12,5 @@ public interface IRepositorioProfessor {
 
     public boolean removeProfessor (long numeroCadastro);
 
-    public Professor buscaProfessor (String nome);
+    public Professor buscaProfessor (long numeroCadastro);
 }

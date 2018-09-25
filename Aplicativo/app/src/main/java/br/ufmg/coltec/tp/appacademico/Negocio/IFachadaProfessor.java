@@ -5,4 +5,10 @@ package br.ufmg.coltec.tp.appacademico.Negocio;
  */
 
 public interface IFachadaProfessor {
+
+    public void insereProfessor (Professor professor);
+
+    public boolean removeProfessor (long numeroCadastro);
+
+    public Professor buscaProfessor (long numeroCadastro);
 }

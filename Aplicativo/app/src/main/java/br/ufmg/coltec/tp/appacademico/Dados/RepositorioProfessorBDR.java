@@ -18,8 +18,8 @@ public class RepositorioProfessorBDR extends SQLiteOpenHelper implements IReposi
     private static final int DB_VERSION = 1;
     private static final String SCRIPT_CREATE = "CREATE TABLE professores (nome TEXT, curso TEXT, numero_cadastro LONG)";
 
-    public RepositorioProfessorBDR(Activity context) {
-        super(context, DB_NAME, null, DB_VERSION);
+    public RepositorioProfessorBDR(Activity activity) {
+        super(activity, DB_NAME, null, DB_VERSION);
     }
 
 
@@ -68,7 +68,7 @@ public class RepositorioProfessorBDR extends SQLiteOpenHelper implements IReposi
     }
 
     @Override
-    public Professor buscaProfessor(String nome) {
+    public Professor buscaProfessor(long numeroCadastro) {
         SQLiteDatabase sqLiteDatabase = getReadableDatabase();
 
         try {
@@ -76,11 +76,11 @@ public class RepositorioProfessorBDR extends SQLiteOpenHelper implements IReposi
 
             if (cursor.moveToFirst()) {
                 do {
-                    String nomeProfessor = cursor.getString(cursor.getColumnIndex("nome"));
+                    long numCadastro = cursor.getLong(cursor.getColumnIndex("numero_cadastro"));;
 
-                    if (nomeProfessor == nome) {
+                    if (numCadastro == numeroCadastro) {
+                        String nome = cursor.getString(cursor.getColumnIndex("nome"));
                         String curso = cursor.getString(cursor.getColumnIndex("curso"));
-                        long numeroCadastro = cursor.getLong(cursor.getColumnIndex("numero_cadastro"));
 
                         return new Professor(nome, curso, numeroCadastro);
                     }
