@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.InserirAlunoActivity">
+    tools:context=".UI.InserirProfessorActivity">
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ALUNO"
+        android:text="PROFESSOR"
         android:textSize="50dp"
         android:textColor="#000"
         android:layout_centerHorizontal="true"
-        android:id="@+id/lbl_tituloAluno"/>
+        android:id="@+id/lbl_tituloProfessor"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -22,8 +22,8 @@
         android:hint="Nome"
         android:layout_marginStart="22dp"
         android:layout_marginEnd="22dp"
-        android:layout_below="@id/lbl_tituloAluno"
-        android:id="@+id/txt_nzomeAluno"
+        android:layout_below="@id/lbl_tituloProfessor"
+        android:id="@+id/txt_inserirNomeProfessor"
         />
 
     <EditText
@@ -31,30 +31,20 @@
         android:layout_height="wrap_content"
         android:hint="Matricula"
         android:inputType="number"
-        android:layout_alignStart="@id/txt_nomeAluno"
-        android:layout_alignEnd="@id/txt_nomeAluno"
-        android:layout_below="@id/txt_nomeAluno"
-        android:id="@+id/txt_matriculaAluno"
+        android:layout_alignStart="@id/txt_inserirNomeProfessor"
+        android:layout_alignEnd="@id/txt_inserirNomeProfessor"
+        android:layout_below="@id/txt_inserirNomeProfessor"
+        android:id="@+id/txt_inserirNumeroCadastroProfessor"
         />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Curso"
-        android:layout_alignStart="@id/txt_nomeAluno"
-        android:layout_alignEnd="@id/txt_nomeAluno"
-        android:layout_below="@id/txt_matriculaAluno"
-        android:id="@+id/txt_cursoAluno"
-        />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Endereco"
-        android:layout_alignStart="@id/txt_nomeAluno"
-        android:layout_alignEnd="@id/txt_nomeAluno"
-        android:layout_below="@id/txt_cursoAluno"
-        android:id="@+id/txt_enderecoAluno"
+        android:layout_alignStart="@id/txt_inserirNomeProfessor"
+        android:layout_alignEnd="@id/txt_inserirNomeProfessor"
+        android:layout_below="@id/txt_inserirNumeroCadastroProfessor"
+        android:id="@+id/txt_inserirCursoProfessor"
         />
 
     <Button
@@ -63,8 +53,8 @@
         android:text="Inserir"
         android:layout_marginTop="22dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/txt_enderecoAluno"
-        android:id="@+id/btn_inserirAluno"
+        android:layout_below="@id/txt_inserirCursoProfessor"
+        android:id="@+id/btn_inserirProfessor"
         />
 
 

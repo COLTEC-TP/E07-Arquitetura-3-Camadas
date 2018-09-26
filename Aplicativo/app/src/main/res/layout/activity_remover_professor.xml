@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.ufmg.coltec.tp.appacademico.UI.ProfessorActivity">
+    tools:context=".UI.RemoverProfessorActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -15,36 +15,24 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/lbl_tituloProfessor"/>
 
-    <Button
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Inserir"
+        android:hint="Matrícula"
+        android:inputType="number"
         android:layout_marginStart="22dp"
         android:layout_marginEnd="22dp"
-        android:layout_marginTop="22dp"
         android:layout_below="@id/lbl_tituloProfessor"
-        android:id="@+id/btn_inserirProfessor"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Remover"
-        android:layout_marginTop="22dp"
-        android:layout_alignStart="@id/btn_inserirProfessor"
-        android:layout_alignEnd="@id/btn_inserirProfessor"
-        android:layout_below="@id/btn_inserirProfessor"
-        android:id="@+id/btn_removerProfessor"
+        android:id="@+id/txt_RemoverProfessorNumeroCadastro"
         />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Buscar"
-        android:layout_marginTop="22dp"
-        android:layout_alignStart="@id/btn_inserirProfessor"
-        android:layout_alignEnd="@id/btn_inserirProfessor"
-        android:layout_below="@id/btn_removerProfessor"
-        android:id="@+id/btn_buscarAluno"
+        android:text="Remover"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/txt_RemoverProfessorNumeroCadastro"
+        android:id="@+id/btn_removerProfessor"
         />
 
 </RelativeLayout>

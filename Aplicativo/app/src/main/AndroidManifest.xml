@@ -16,11 +16,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UI.ProfessorActivity" android:parentActivityName=".UI.MainActivity" />
-        <activity android:name=".UI.AlunoActivity" android:parentActivityName=".UI.MainActivity"/>
-        <activity android:name=".UI.InserirAlunoActivity" android:parentActivityName=".UI.AlunoActivity"/>
-        <activity android:name=".UI.RemoverAlunoActivity" android:parentActivityName=".UI.AlunoActivity"/>
-        <activity android:name=".UI.BuscarAlunoActivity" android:parentActivityName=".UI.AlunoActivity" />
+        <activity
+            android:name=".UI.ProfessorActivity"
+            android:parentActivityName=".UI.MainActivity" />
+        <activity
+            android:name=".UI.AlunoActivity"
+            android:parentActivityName=".UI.MainActivity" />
+        <activity
+            android:name=".UI.InserirAlunoActivity"
+            android:parentActivityName=".UI.AlunoActivity" />
+        <activity
+            android:name=".UI.RemoverAlunoActivity"
+            android:parentActivityName=".UI.AlunoActivity" />
+        <activity
+            android:name=".UI.BuscarAlunoActivity"
+            android:parentActivityName=".UI.AlunoActivity" />
+        <activity android:name=".UI.BuscarProfessorActivity" />
+        <activity android:name=".UI.InserirProfessorActivity" />
+        <activity android:name=".UI.RemoverProfessorActivity"></activity>
     </application>
 
 </manifest>
