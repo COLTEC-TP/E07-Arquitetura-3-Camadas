@@ -16,11 +16,20 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         Button aluno = findViewById(R.id.btn_alunoUI);
+        Button professor = findViewById(R.id.btn_professorUI);
 
         aluno.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AlunoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        professor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ProfessorActivity.class);
                 startActivity(intent);
             }
         });

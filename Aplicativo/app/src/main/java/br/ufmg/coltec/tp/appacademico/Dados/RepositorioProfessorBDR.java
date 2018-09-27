@@ -14,9 +14,9 @@ import br.ufmg.coltec.tp.appacademico.Negocio.Professor;
 
 public class RepositorioProfessorBDR extends SQLiteOpenHelper implements IRepositorioProfessor {
 
-    private static String DB_NAME = "Alunos";
+    private static String DB_NAME = "Professores";
     private static final int DB_VERSION = 1;
-    private static final String SCRIPT_CREATE = "CREATE TABLE professores (nome TEXT, curso TEXT, numero_cadastro LONG)";
+    private static final String SCRIPT_CREATE = "CREATE TABLE Professores (nome TEXT, curso TEXT, numero_cadastro LONG)";
 
     public RepositorioProfessorBDR(Activity activity) {
         super(activity, DB_NAME, null, DB_VERSION);
@@ -46,7 +46,7 @@ public class RepositorioProfessorBDR extends SQLiteOpenHelper implements IReposi
             contentValues.put("curso", professor.getCurso());
             contentValues.put("numero_cadastro", professor.getNumeroCadastro());
 
-            sqLiteDatabase.insert("Alunos", null, contentValues);
+            sqLiteDatabase.insert(DB_NAME, null, contentValues);
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -72,7 +72,7 @@ public class RepositorioProfessorBDR extends SQLiteOpenHelper implements IReposi
         SQLiteDatabase sqLiteDatabase = getReadableDatabase();
 
         try {
-            Cursor cursor = sqLiteDatabase.query("Professor", null, null, null, null, null, null);
+            Cursor cursor = sqLiteDatabase.query(DB_NAME, null, null, null, null, null, null);
 
             if (cursor.moveToFirst()) {
                 do {

@@ -26,8 +26,8 @@ public class InserirProfessorActivity extends Activity {
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         final EditText nome = findViewById(R.id.txt_inserirNomeProfessor);
-        final EditText curso = findViewById(R.id.txt_inserirNumeroCadastroProfessor);
-        final EditText numeroCadastro = findViewById(R.id.txt_inserirCursoProfessor);
+        final EditText curso = findViewById(R.id.txt_inserirCursoProfessor);
+        final EditText numeroCadastro = findViewById(R.id.txt_inserirNumeroCadastroProfessor);
 
         Button btn_inserir = findViewById(R.id.btn_inserirProfessor);
 

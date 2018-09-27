@@ -56,7 +56,7 @@ public class RepositorioAlunoBDR extends SQLiteOpenHelper implements IRepositori
 
         try {
             // faz a leitura dos dados do banco
-            Cursor c = db.query("Alunos", null, null, null, null, null, null);
+            Cursor c = db.query(DB_NOME, null, null, null, null, null, null);
 
             if(c.moveToFirst()) {
                 do {

@@ -31,9 +31,18 @@
         <activity
             android:name=".UI.BuscarAlunoActivity"
             android:parentActivityName=".UI.AlunoActivity" />
-        <activity android:name=".UI.BuscarProfessorActivity" />
-        <activity android:name=".UI.InserirProfessorActivity" />
-        <activity android:name=".UI.RemoverProfessorActivity"></activity>
+        <activity
+            android:name=".UI.BuscarProfessorActivity"
+            android:parentActivityName=".UI.ProfessorActivity"
+            />
+        <activity
+            android:name=".UI.InserirProfessorActivity"
+            android:parentActivityName=".UI.ProfessorActivity"
+            />
+        <activity
+            android:name=".UI.RemoverProfessorActivity"
+            android:parentActivityName=".UI.ProfessorActivity"
+        ></activity>
     </application>
 
 </manifest>

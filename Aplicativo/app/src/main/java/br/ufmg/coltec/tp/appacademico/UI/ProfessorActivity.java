@@ -26,7 +26,7 @@ public class ProfessorActivity extends Activity {
         btn_inserir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ProfessorActivity.this, AlunoActivity.class);
+                Intent intent = new Intent(ProfessorActivity.this, InserirProfessorActivity.class);
                 startActivity(intent);
             }
         });
@@ -34,7 +34,7 @@ public class ProfessorActivity extends Activity {
         btn_remover.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ProfessorActivity.this, AlunoActivity.class);
+                Intent intent = new Intent(ProfessorActivity.this, RemoverProfessorActivity.class);
                 startActivity(intent);
             }
         });
@@ -42,7 +42,7 @@ public class ProfessorActivity extends Activity {
         btn_buscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ProfessorActivity.this, AlunoActivity.class);
+                Intent intent = new Intent(ProfessorActivity.this, BuscarProfessorActivity.class);
                 startActivity(intent);
             }
         });
