@@ -27,10 +27,11 @@
             android:hint="Nome"
             android:id="@+id/editTextProfessor" />
 
-        <LinearLayout
-            android:id="@+id/linearLayoutProfessor"
+        <RadioGroup
+            android:id="@+id/radioGroupProfessor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_below="@id/editTextProfessor">
             <RadioButton
                 android:id="@+id/radioCadastroProfessor"
@@ -45,13 +46,14 @@
                 android:layout_height="wrap_content"
                 android:text="Consulta"
                 android:layout_weight=".50" />
-        </LinearLayout>
+        </RadioGroup>
 
         <Button
+            android:id="@+id/enviarProfessor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Enviar"
-            android:layout_below="@id/linearLayoutProfessor"
+            android:layout_below="@id/radioGroupProfessor"
             android:layout_alignParentRight="true"/>
 
     </RelativeLayout>
@@ -77,10 +79,11 @@
             android:hint="Nome"
             android:id="@+id/editTextAluno" />
 
-        <LinearLayout
-            android:id="@+id/linearLayoutAluno"
+        <RadioGroup
+            android:id="@+id/radioGroupAluno"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_below="@id/editTextAluno">
             <RadioButton
                 android:id="@+id/radioCadastroAluno"
@@ -95,13 +98,14 @@
                 android:layout_height="wrap_content"
                 android:text="Consulta"
                 android:layout_weight=".50" />
-        </LinearLayout>
+        </RadioGroup>
 
         <Button
+            android:id="@+id/enviarAluno"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Enviar"
-            android:layout_below="@id/linearLayoutAluno"
+            android:layout_below="@id/radioGroupAluno"
             android:layout_alignParentRight="true"/>
 
     </RelativeLayout>
