@@ -1,7 +1,9 @@
 package br.ufmg.coltec.tp.appacademico.negocios;
 
+import java.util.List;
+
 public interface IFachadaProfessor {
 
-    void Cadastro(String nomeProfessor);
-    void Consulta(String nomeProfessor);
+    void cadastro(String nomeProfessor);
+    List consulta(String nomeProfessor);
 }

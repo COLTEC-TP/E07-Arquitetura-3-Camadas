@@ -4,15 +4,22 @@ import java.util.List;
 
 public class FachadaProfessor implements IFachadaProfessor {
 
+    private ControladorProfessor controladorProfessor;
 
-    @Override
-    public void Cadastro(String nomeProfessor) {
-        Professor professor = new Professor(nomeProfessor);
-        new ControladorProfessor().cadastrarProfessor(professor);
+    public FachadaProfessor() {
+        controladorProfessor = new ControladorProfessor();
     }
 
     @Override
-    public void Consulta(String nomeProfessor) {
-        List professores = new ControladorProfessor().consultarProfessores();
+    public void cadastro(String nomeProfessor) {
+        Professor professor = new Professor(nomeProfessor);
+        controladorProfessor.cadastrarProfessor(professor);
+    }
+
+    @Override
+    public List consulta(String nomeProfessor) {
+        Professor professor = new Professor(nomeProfessor);
+        List professores = controladorProfessor.consultarProfessores(professor);
+        return professores;
     }
 }
